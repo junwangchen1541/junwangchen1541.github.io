@@ -6,10 +6,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.home %}{{ ui.title }}{% else %}{{ page.title }} · {{ ui.name }}{% endif %}</title>
-  <meta name="description" content="{{ ui.description }}">
+  <meta name="description" content="{{ page.description | default: ui.description | escape }}">
   <meta name="theme-color" content="#080f1c">
   <meta property="og:title" content="{% if page.home %}{{ ui.title }}{% else %}{{ page.title }} · {{ ui.name }}{% endif %}">
-  <meta property="og:description" content="{{ ui.description }}">
+  <meta property="og:description" content="{{ page.description | default: ui.description | escape }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
@@ -31,6 +31,7 @@
     <nav id="site-nav" aria-label="{{ ui.navigation }}">
       <a href="{{ ui.home | relative_url }}#research">{{ ui.research }}</a>
       <a href="{{ ui.home | relative_url }}#work">{{ ui.work }}</a>
+      <a href="{{ ui.writing_url | relative_url }}">{{ ui.writing }}</a>
       <a href="{{ ui.home | relative_url }}#about">{{ ui.about }}</a>
       <a href="{{ ui.cv | relative_url }}">{{ ui.resume }} <span aria-hidden="true">↗</span></a>
       <a class="nav-contact" href="{{ ui.home | relative_url }}#contact">{{ ui.contact }} <span aria-hidden="true">↗</span></a>
@@ -43,7 +44,7 @@
   {% if page.home %}{{ content }}{% else %}
   <main id="main" class="document-main">
     <a class="eyebrow back-link" href="{{ ui.home | relative_url }}">{{ ui.back }}</a>
-    <div class="document-heading"><p class="eyebrow">{{ ui.notes }}</p><h1>{{ page.title }}</h1></div>
+    <div class="document-heading"><p class="eyebrow">{{ ui.notes }}</p><h1>{{ page.title }}</h1>{% if page.article %}<time class="article-date" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y.%m.%d' }}</time>{% endif %}</div>
     <article class="document-content">{{ content }}</article>
   </main>
   {% endif %}

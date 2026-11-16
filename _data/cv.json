@@ -3,7 +3,7 @@
     "name": "Junwang Chen",
     "email": "junwangchen1541@qq.com",
     "url": "https://junwangchen1541.github.io",
-    "summary": "Undergraduate in Software Engineering at Ocean University of China. Interested in deep learning, computer vision, remote sensing, and sea ice forecasting.",
+    "summary": "Undergraduate in Software Engineering at Ocean University of China, working on AI for ocean science, multimodal remote sensing, and Ascend operator development.",
     "location": {
       "city": "Qingdao",
       "countryCode": "CN"
@@ -32,11 +32,20 @@
   "skills": [
     {
       "name": "Deep Learning",
-      "keywords": ["PyTorch", "Computer Vision", "Remote Sensing"]
+      "keywords": [
+        "PyTorch",
+        "Computer Vision",
+        "Remote Sensing"
+      ]
     },
     {
       "name": "Programming",
-      "keywords": ["Python", "C++", "Git", "Linux"]
+      "keywords": [
+        "Python",
+        "C++",
+        "Git",
+        "Linux"
+      ]
     }
   ]
 }

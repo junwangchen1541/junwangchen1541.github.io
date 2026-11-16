@@ -5,13 +5,15 @@ en:
   name: Junwang Chen
   signature: 君往臣 · A PERSONAL OBSERVATORY
   title: Junwang Chen · A personal observatory
-  description: Junwang Chen studies Software Engineering at Ocean University of China, exploring deep learning, remote sensing, and our changing ocean.
+  description: Junwang Chen. Undergraduate in Software Engineering at Ocean University of China, working on AI for ocean science, multimodal remote sensing, and Ascend operator development.
   skip: Skip to content
   home_label: Junwang Chen, home
   menu: Menu
   navigation: Main navigation
   research: Research
   work: Selected work
+  writing: Writing
+  writing_url: /writing/
   about: About
   resume: CV
   contact: Let’s connect
@@ -30,13 +32,15 @@ zh:
   name: 君往臣
   signature: JUNWANG CHEN · 个人观测站
   title: 君往臣 · 个人观测站
-  description: 君往臣，中国海洋大学软件工程专业本科生，关注深度学习、遥感智能与海洋的时空变化。
+  description: 君往臣，中国海洋大学软件工程专业本科生，关注人工智能海洋学、多模态遥感与昇腾算子开发。
   skip: 跳至正文
   home_label: 君往臣，返回首页
   menu: 菜单
   navigation: 主导航
   research: 研究方向
   work: 项目选集
+  writing: 文章
+  writing_url: /zh/writing/
   about: 关于我
   resume: 简历
   contact: 与我联系

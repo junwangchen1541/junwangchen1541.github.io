@@ -1,0 +1,22 @@
+en:
+  label: WRITING / FIELD NOTES
+  title: A little space for
+  emphasis: thoughts to grow.
+  link: Visit the journal
+  url: /writing/
+  empty_title: The first page is still blank.
+  empty_body: No articles yet. This is a space for future essays, research notes, and thoughts along the way.
+  status: NOT YET WRITTEN
+  mark: NOTES TO THE FUTURE
+  read: Read article
+zh:
+  label: 文章 / 沿途手记
+  title: 留一点空白，
+  emphasis: 让想法生长。
+  link: 走进文章集
+  url: /zh/writing/
+  empty_title: 第一页，还留着空白。
+  empty_body: 目前还没有文章。这里留给以后的随笔、研究手记，以及沿途值得记下的想法。
+  status: 尚未落笔
+  mark: 写给未来的手记
+  read: 阅读文章

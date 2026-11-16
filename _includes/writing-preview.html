@@ -1,0 +1,8 @@
+{% assign words = site.data.writing[page.language] %}
+<section class="writing section-shell" id="writing" aria-labelledby="writing-title">
+  <div class="section-heading" data-reveal>
+    <div><p class="eyebrow"><span class="section-no">04 /</span> {{ words.label }}</p><h2 id="writing-title">{{ words.title }}<br><em>{{ words.emphasis }}</em></h2></div>
+    <a class="text-link" href="{{ words.url | relative_url }}">{{ words.link }} <span aria-hidden="true">↗</span></a>
+  </div>
+  {% include writing-list.html %}
+</section>

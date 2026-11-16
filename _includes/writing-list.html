@@ -1,0 +1,19 @@
+{% assign words = site.data.writing[page.language] %}
+{% assign articles = site.articles | where: 'published', true | where: 'language', page.language | sort: 'date' | reverse %}
+{% if page.home %}{% assign article_limit = 3 %}{% else %}{% assign article_limit = 999 %}{% endif %}
+{% if articles.size > 0 %}
+<div class="writing-list">
+  {% for article in articles limit: article_limit %}
+  <article class="writing-entry">
+    <time datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: '%Y.%m.%d' }}</time>
+    <div><h3><a href="{{ article.url | relative_url }}">{{ article.title | escape }}</a></h3><p>{{ article.description | escape }}</p></div>
+    <a class="writing-read" href="{{ article.url | relative_url }}" aria-label="{{ words.read }}: {{ article.title | escape }}">↗</a>
+  </article>
+  {% endfor %}
+</div>
+{% else %}
+<div class="writing-empty" data-reveal>
+  <div class="empty-page" aria-hidden="true"><span>✦</span><div></div><div></div><div></div><small>{{ words.mark }}</small></div>
+  <div class="empty-copy"><p class="eyebrow">{{ words.status }}</p><h3>{{ words.empty_title }}</h3><p>{{ words.empty_body }}</p></div>
+</div>
+{% endif %}

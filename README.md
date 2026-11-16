@@ -24,6 +24,8 @@ All production assets are served locally. Cormorant Garamond is distributed unde
 
 ## Main Content
 
+Profile content was synchronized with the public [GitHub profile README](https://github.com/junwangchen1541/junwangchen1541) and the public ARF-RWKV, sea-ice forecasting, and Qidu Story System READMEs on November 16, 2026. The Ascend contribution is described as a submitted fix; no merge or acceptance status is inferred.
+
 - `_pages/about.html`: designed homepage and bilingual introduction
 - `_pages/research.md`: research interests
 - `_pages/projects.md`: selected projects
@@ -35,10 +37,35 @@ All production assets are served locally. Cormorant Garamond is distributed unde
 - `assets/css/observatory.css`: responsive visual system
 - `assets/js/observatory.js`: progressive motion and interactions
 - `images/moon.svg`, `images/observatory-mark.svg`: original visual assets
+- `_pages/writing.html`, `_pages/zh/writing.html`: bilingual writing indexes
+- `_data/writing.yml`, `_includes/writing-preview.html`, `_includes/writing-list.html`: writing section and empty state
+- `_articles/`: future articles, currently empty
 
 The Observatory navigation is maintained in `_layouts/observatory.html`. The legacy academicpages navigation remains in `_data/navigation.yml` for template pages.
 
 ## Local Preview
+
+### Publishing a future article
+
+No articles have been written or published yet. The homepage and writing indexes show an intentional empty state. To add a real article, create a Markdown file in `_articles/` with front matter like the following (replace the title, description, date, and slug with the actual article details):
+
+```yaml
+---
+title: "文章标题"
+description: "文章的简短摘要"
+date: 2026-11-16
+language: zh
+permalink: /zh/writing/your-slug/
+translation_url: /writing/
+published: false
+---
+```
+
+Write the article body below the front matter. Set `published: true` only when ready to publish; articles default to unpublished. For English, use `language: en` and `/writing/your-slug/`. When both translations exist, point each `translation_url` at its counterpart. If an article has no translation, the language link should point to the other language's writing index, as in the example above.
+
+Published articles appear automatically in the matching language's index, newest first; the homepage shows the latest three. No translated article is invented when only one language exists. The `date` field is the displayed publication date, not a scheduling mechanism.
+
+### Running the site
 
 Install Ruby dependencies, then run:
 

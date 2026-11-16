@@ -1904,6 +1904,216 @@ html[lang='zh-CN'] .document-content {
     font-size: 25px;
   }
 }
+.contribution-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  border-top: 1px solid var(--line);
+  margin-top: 38px;
+  padding-top: 32px;
+}
+.contribution-note .eyebrow {
+  color: var(--gold);
+  font-size: 9px;
+}
+.contribution-note h3 {
+  font: 30px/1.4 var(--serif);
+  margin: 10px 0;
+}
+.contribution-note p:not(.eyebrow) {
+  max-width: 580px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.contribution-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.writing {
+  border-top: 1px solid var(--line);
+  background: radial-gradient(ellipse at 25% 100%, #152536, transparent 65%);
+}
+.writing-empty {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  gap: 56px;
+  border-block: 1px solid var(--line);
+  padding: 44px 50px;
+}
+.empty-page {
+  width: 150px;
+  height: 185px;
+  border: 1px solid rgba(199, 179, 136, 0.25);
+  padding: 25px 22px;
+  transform: rotate(-7deg);
+  background: linear-gradient(140deg, #1b2b3b, #0b1523);
+  position: relative;
+}
+.empty-page::before {
+  content: '';
+  position: absolute;
+  inset: 7px -8px -8px 7px;
+  border: 1px solid var(--line);
+  z-index: -1;
+}
+.empty-page > span {
+  font:
+    26px Georgia,
+    serif;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 23px;
+}
+.empty-page > div {
+  height: 1px;
+  background: var(--line);
+  margin-top: 12px;
+}
+.empty-page > div:nth-of-type(3) {
+  width: 60%;
+}
+.empty-page small {
+  display: block;
+  margin-top: 21px;
+  font-size: 6px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+.empty-copy .eyebrow {
+  color: var(--gold);
+  font-size: 9px;
+  margin: 0 0 15px;
+}
+.empty-copy h3 {
+  font: 36px/1.3 var(--serif);
+  margin: 0 0 14px;
+  color: var(--paper);
+}
+.empty-copy > p:last-child {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--muted);
+  max-width: 520px;
+  margin: 0;
+}
+.writing-entry {
+  display: grid;
+  grid-template-columns: 105px 1fr 40px;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+.writing-entry time,
+.article-date {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.writing-entry time {
+  padding-top: 8px;
+}
+.writing-entry h3 {
+  font: 30px/1.3 var(--serif);
+  margin: 0 0 10px;
+}
+.writing-entry p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
+.writing-entry a {
+  text-decoration: none;
+}
+.writing-read {
+  color: var(--gold);
+  padding: 8px;
+  align-self: start;
+}
+.article-date {
+  display: block;
+  margin-top: 20px;
+}
+html[lang='zh-CN'] .contribution-note h3,
+html[lang='zh-CN'] .empty-copy h3,
+html[lang='zh-CN'] .writing-entry h3 {
+  font-family: var(--zh-serif);
+  font-size: 27px;
+}
+@media (min-width: 801px) and (max-width: 1100px) {
+  .site-header nav {
+    gap: 12px;
+  }
+  .site-header {
+    gap: 12px;
+  }
+  .site-header .wordmark {
+    font-size: 21px;
+  }
+}
+@media (max-width: 800px) {
+  .contribution-note {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .contribution-links {
+    flex-direction: row;
+    gap: 25px;
+  }
+  .writing-empty {
+    padding: 36px 20px;
+    gap: 30px;
+    grid-template-columns: 150px 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .writing-empty {
+    grid-template-columns: 1fr;
+    padding: 30px 0;
+    gap: 34px;
+  }
+  .empty-page {
+    width: 125px;
+    height: 155px;
+    margin: 10px 15px;
+  }
+  .empty-page > span {
+    margin-bottom: 15px;
+  }
+  .empty-page small {
+    font-size: 5px;
+    margin-top: 15px;
+  }
+  .empty-copy h3 {
+    font-size: 29px;
+  }
+  html[lang='zh-CN'] .empty-copy h3 {
+    font-size: 24px;
+  }
+  .writing-entry {
+    grid-template-columns: 1fr 35px;
+    gap: 12px;
+  }
+  .writing-entry time {
+    grid-column: 1/-1;
+  }
+  .writing-entry h3 {
+    font-size: 26px;
+  }
+  .contribution-links {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .document-main .writing-empty {
+    border-top: 0;
+    padding-top: 0;
+  }
+}
 @media print {
   body {
     background: white;

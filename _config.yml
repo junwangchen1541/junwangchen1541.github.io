@@ -14,7 +14,7 @@ author:
   avatar           : "profile.png"
   name             : "Junwang Chen"
   pronouns         :
-  bio              : "Undergraduate in Software Engineering at Ocean University of China. Interested in deep learning, computer vision, remote sensing, and sea ice forecasting."
+  bio              : "Undergraduate in Software Engineering at Ocean University of China, working on AI for ocean science, multimodal remote sensing, and Ascend operator development."
   location         : "Qingdao, China"
   employer         : "Ocean University of China"
   uri              : "https://junwangchen1541.github.io"
@@ -169,6 +169,9 @@ kramdown:
   enable_coderay: false
 
 collections:
+  articles:
+    output: true
+    permalink: /writing/:path/
   teaching:
     output: true
     permalink: /:collection/:path/
@@ -183,6 +186,13 @@ collections:
     permalink: /:collection/:path/
 
 defaults:
+  - scope:
+      path: ""
+      type: articles
+    values:
+      layout: observatory
+      published: false
+      article: true
   - scope:
       path: ""
       type: posts

@@ -6,7 +6,7 @@ language: en
 translation_url: /zh/research/
 ---
 
-My research interests are still developing, but they currently center on deep learning methods for remote sensing and scientific prediction.
+My research centers on deep learning, computer vision, and remote sensing. Current work spans AI for ocean science, remote-sensing image analysis, and chip operator development.
 
 ## Remote Sensing Intelligence
 
@@ -20,6 +20,8 @@ My current reading and implementation work covers spectral-spatial modeling, lig
 
 I am exploring physics-consistent forecasting pipelines for Arctic sea ice concentration, with emphasis on spatiotemporal dynamics and scientifically meaningful prediction behavior.
 
-## Efficient Architectures
+## RWKV, Foundation Models & AI Infrastructure
 
-I am following Mamba-style sequence models, vision foundation models, and multimodal remote-sensing systems as possible directions for future research projects.
+My recent interests include RWKV architectures, visual foundation models, large-model applications, and Ascend operator development. I connect model-level research with practical questions about efficient computation.
+
+The public [ARF-RWKV implementation](https://github.com/junwangchen1541/ARF-RWKV) explores asymmetric redundancy-filtered fusion for HSI–LiDAR and HSI–SAR classification.
