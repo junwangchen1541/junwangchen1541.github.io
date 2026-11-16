@@ -1,43 +1,52 @@
+{% assign language = page.language | default: 'en' %}
+{% assign ui = site.data.observatory[language] %}
 <!doctype html>
-<html lang="en">
+<html lang="{{ ui.lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.home %}Junwang Chen · 君往臣{% else %}{{ page.title }} · Junwang Chen{% endif %}</title>
-  <meta name="description" content="Junwang Chen · 君往臣. Software engineering at Ocean University of China. Exploring remote sensing, deep learning, and the changing ocean.">
+  <title>{% if page.home %}{{ ui.title }}{% else %}{{ page.title }} · {{ ui.name }}{% endif %}</title>
+  <meta name="description" content="{{ ui.description }}">
   <meta name="theme-color" content="#080f1c">
-  <meta property="og:title" content="Junwang Chen · A personal observatory">
-  <meta property="og:description" content="Learning from the Earth. Looking toward the unknown. Research, code, and field notes by Junwang Chen.">
+  <meta property="og:title" content="{% if page.home %}{{ ui.title }}{% else %}{{ page.title }} · {{ ui.name }}{% endif %}">
+  <meta property="og:description" content="{{ ui.description }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:locale" content="{% if language == 'zh' %}zh_CN{% else %}en_US{% endif %}">
+  <link rel="alternate" hreflang="{{ ui.lang }}" href="{{ page.url | absolute_url }}">
+  <link rel="alternate" hreflang="{{ ui.other_lang }}" href="{{ page.translation_url | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href="{% if language == 'zh' %}{{ page.translation_url | absolute_url }}{% else %}{{ page.url | absolute_url }}{% endif %}">
   <link rel="icon" href="{{ '/images/observatory-mark.svg' | relative_url }}" type="image/svg+xml">
   <link rel="preload" href="{{ '/assets/fonts/cormorant-regular.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/css/observatory.css' | relative_url }}">
   <script src="{{ '/assets/js/observatory.js' | relative_url }}" defer></script>
-  <noscript><style>.menu-toggle,#motion-toggle{display:none}@media(max-width:800px){.site-header{height:auto;min-height:85px;flex-wrap:wrap;padding-block:20px;gap:20px}.site-header nav{display:flex;position:static;flex-direction:row;flex-wrap:wrap;padding:0;border:0;gap:16px;font-size:11px;background:transparent}.hero-content{padding-top:210px}.document-main{padding-top:210px}}</style></noscript>
+  <noscript><style>.menu-toggle,#motion-toggle{display:none}@media(max-width:800px){.site-header{height:auto;min-height:85px;flex-wrap:wrap;padding-block:20px;gap:20px}.site-header nav{display:flex;position:static;flex-direction:row;flex-wrap:wrap;padding:0;border:0;gap:16px;font-size:11px;background:transparent;order:3;width:100%}.hero-content{padding-top:210px}.document-main{padding-top:210px}}</style></noscript>
 </head>
 <body{% unless page.home %} class="interior-page"{% endunless %}>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">{{ ui.skip }}</a>
   <div class="reading-progress" aria-hidden="true"></div>
   <header class="site-header">
-    <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Junwang Chen, home"><span class="brand-star" aria-hidden="true">✳</span><span>Junwang Chen<small>君往臣 · A PERSONAL OBSERVATORY</small></span></a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" type="button">Menu <span aria-hidden="true">+</span></button>
-    <nav id="site-nav" aria-label="Main navigation">
-      <a href="{{ '/#research' | relative_url }}">Research</a>
-      <a href="{{ '/#work' | relative_url }}">Selected work</a>
-      <a href="{{ '/#about' | relative_url }}">About</a>
-      <a href="{{ '/cv/' | relative_url }}">CV <span aria-hidden="true">↗</span></a>
-      <a class="nav-contact" href="{{ '/#contact' | relative_url }}">Let’s connect <span aria-hidden="true">↗</span></a>
+    <a class="wordmark" href="{{ ui.home | relative_url }}" aria-label="{{ ui.home_label }}"><span class="brand-star" aria-hidden="true">✳</span><span>{{ ui.name }}<small>{{ ui.signature }}</small></span></a>
+    <nav id="site-nav" aria-label="{{ ui.navigation }}">
+      <a href="{{ ui.home | relative_url }}#research">{{ ui.research }}</a>
+      <a href="{{ ui.home | relative_url }}#work">{{ ui.work }}</a>
+      <a href="{{ ui.home | relative_url }}#about">{{ ui.about }}</a>
+      <a href="{{ ui.cv | relative_url }}">{{ ui.resume }} <span aria-hidden="true">↗</span></a>
+      <a class="nav-contact" href="{{ ui.home | relative_url }}#contact">{{ ui.contact }} <span aria-hidden="true">↗</span></a>
     </nav>
+    <div class="header-controls">
+      <a class="language-switch" href="{{ page.translation_url | relative_url }}" lang="{{ ui.other_lang }}" hreflang="{{ ui.other_lang }}" aria-label="{{ ui.switch_label }}">{{ ui.switch }}</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" type="button">{{ ui.menu }} <span aria-hidden="true">+</span></button>
+    </div>
   </header>
   {% if page.home %}{{ content }}{% else %}
   <main id="main" class="document-main">
-    <a class="eyebrow back-link" href="{{ '/' | relative_url }}">← BACK TO THE OBSERVATORY</a>
-    <div class="document-heading"><p class="eyebrow">FIELD NOTES / JUNWANG CHEN</p><h1>{{ page.title }}</h1></div>
+    <a class="eyebrow back-link" href="{{ ui.home | relative_url }}">{{ ui.back }}</a>
+    <div class="document-heading"><p class="eyebrow">{{ ui.notes }}</p><h1>{{ page.title }}</h1></div>
     <article class="document-content">{{ content }}</article>
   </main>
   {% endif %}
-  <footer class="site-footer"><a href="{{ '/' | relative_url }}">Junwang Chen <span lang="zh-CN">君往臣</span></a><p>Qingdao, Earth <span class="footer-star" aria-hidden="true">✦</span> Looking a little further.</p><a href="#main">Back to top ↑</a></footer>
+  <footer class="site-footer"><a href="{{ ui.home | relative_url }}">{{ ui.name }} <span>{% if language == 'zh' %}Junwang Chen{% else %}君往臣{% endif %}</span></a><p>{{ ui.location }} <span class="footer-star" aria-hidden="true">✦</span> {{ ui.footer }}</p><a href="#main">{{ ui.top }}</a></footer>
 </body>
 </html>

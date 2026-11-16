@@ -2,6 +2,14 @@
   'use strict';
 
   const root = document.documentElement;
+  const chinese = root.lang === 'zh-CN';
+  const languageSwitch = document.querySelector('.language-switch');
+  const translationUrl = languageSwitch.getAttribute('href');
+  function syncLanguageAnchor() {
+    languageSwitch.setAttribute('href', translationUrl + location.hash);
+  }
+  syncLanguageAnchor();
+  addEventListener('hashchange', syncLanguageAnchor);
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
   const toggle = document.querySelector('#motion-toggle');
@@ -233,15 +241,27 @@
     motionPaused = manualPause || reduceMotion.matches;
     root.classList.toggle('motion-paused', motionPaused);
     toggle.setAttribute('aria-pressed', String(motionPaused));
-    toggle.querySelector('span').textContent = motionPaused ? 'off' : 'on';
+    toggle.querySelector('span').textContent = chinese
+      ? motionPaused
+        ? '关闭'
+        : '开启'
+      : motionPaused
+        ? 'off'
+        : 'on';
     toggle.disabled = reduceMotion.matches;
     toggle.setAttribute(
       'aria-label',
-      reduceMotion.matches
-        ? 'Motion is off, following your system preference'
-        : motionPaused
-          ? 'Motion is off. Enable animation'
-          : 'Motion is on. Pause animation',
+      chinese
+        ? reduceMotion.matches
+          ? '动效已关闭，遵循系统减少动态效果设置'
+          : motionPaused
+            ? '动效已关闭，点击开启'
+            : '动效已开启，点击暂停'
+        : reduceMotion.matches
+          ? 'Motion is off, following your system preference'
+          : motionPaused
+            ? 'Motion is off. Enable animation'
+            : 'Motion is on. Pause animation',
     );
     if (motionPaused) {
       cancelAnimationFrame(frame);
@@ -257,7 +277,9 @@
     if (reduceMotion.matches) {
       toggle.setAttribute(
         'aria-label',
-        'Animation follows your system’s reduced motion preference',
+        chinese
+          ? '动效遵循系统减少动态效果设置'
+          : 'Animation follows your system’s reduced motion preference',
       );
       return;
     }

@@ -2,7 +2,8 @@
 layout: observatory
 title: "CV"
 permalink: /cv/
-author_profile: true
+language: en
+translation_url: /zh/cv/
 redirect_from:
   - /resume
 ---
@@ -11,9 +12,6 @@ redirect_from:
 
 **Ocean University of China**, College of Computer Science and Technology  
 B.Eng. in Software Engineering, 2024-present
-
-**中国海洋大学**，计算机科学与技术学院  
-软件工程专业，本科，2024 级至今
 
 ## Research Interests
 

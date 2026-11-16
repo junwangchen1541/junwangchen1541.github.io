@@ -12,7 +12,13 @@ The site uses Jekyll and GitHub Pages, with a custom **Personal Observatory** de
 
 A midnight-blue, moonlit academic portfolio: cold white typography, champagne-gold details, original lunar and polar illustrations, and generous editorial spacing. The home page connects research interests, public projects, education, honors, and contact information.
 
-The visual system includes a seeded Canvas star field, pointer-responsive constellations and lunar parallax, animated SVG polar contours, scroll reveals, native cross-document view transitions where supported, and a reading progress indicator. Animation follows the system reduced-motion preference and can be paused from the home page. Canvas rendering suspends when offscreen or when the tab is hidden. Essential content and navigation remain available without JavaScript.
+The visual system includes a seeded Canvas star field, pointer-responsive constellations and lunar parallax, animated SVG polar contours, scroll reveals, and a reading progress indicator. Animation follows the system reduced-motion preference and can be paused from the home page. Canvas rendering suspends when offscreen or when the tab is hidden. Essential content and navigation remain available without JavaScript.
+
+## Languages
+
+English lives at `/`; the complete Chinese edition lives at `/zh/`. Each edition includes the homepage, research, projects, honors, and CV. The persistent `中文` / `EN` link switches to the corresponding page and preserves homepage section anchors when JavaScript is enabled. Ordinary links stay in the selected language, and language switching also works without JavaScript.
+
+Shared navigation and metadata translations are maintained in `_data/observatory.yml`. English content lives in `_pages/`; Chinese content lives in `_pages/zh/`. Each page declares `language` and `translation_url` in its front matter. The shared layout emits localized titles, descriptions, document language, canonical URLs, and alternate-language links. Chinese typography is styled separately while preserving the moonlit visual system.
 
 All production assets are served locally. Cormorant Garamond is distributed under the SIL Open Font License in `assets/fonts/OFL.txt`; the moon, polar atlas, and project illustrations are original decorative artwork, not experimental or observational data.
 

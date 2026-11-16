@@ -1,0 +1,50 @@
+en:
+  lang: en
+  home: /
+  cv: /cv/
+  name: Junwang Chen
+  signature: 君往臣 · A PERSONAL OBSERVATORY
+  title: Junwang Chen · A personal observatory
+  description: Junwang Chen studies Software Engineering at Ocean University of China, exploring deep learning, remote sensing, and our changing ocean.
+  skip: Skip to content
+  home_label: Junwang Chen, home
+  menu: Menu
+  navigation: Main navigation
+  research: Research
+  work: Selected work
+  about: About
+  resume: CV
+  contact: Let’s connect
+  switch: 中文
+  switch_label: 切换到中文版
+  other_lang: zh-CN
+  back: ← BACK TO THE OBSERVATORY
+  notes: FIELD NOTES / JUNWANG CHEN
+  location: Qingdao, Earth
+  footer: Looking a little further.
+  top: Back to top ↑
+zh:
+  lang: zh-CN
+  home: /zh/
+  cv: /zh/cv/
+  name: 君往臣
+  signature: JUNWANG CHEN · 个人观测站
+  title: 君往臣 · 个人观测站
+  description: 君往臣，中国海洋大学软件工程专业本科生，关注深度学习、遥感智能与海洋的时空变化。
+  skip: 跳至正文
+  home_label: 君往臣，返回首页
+  menu: 菜单
+  navigation: 主导航
+  research: 研究方向
+  work: 项目选集
+  about: 关于我
+  resume: 简历
+  contact: 与我联系
+  switch: EN
+  switch_label: Switch to English
+  other_lang: en
+  back: ← 返回观测站
+  notes: 个人手记 / 君往臣
+  location: 地球 · 青岛
+  footer: 再向远处看一点。
+  top: 回到顶部 ↑

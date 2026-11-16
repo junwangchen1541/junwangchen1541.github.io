@@ -1166,9 +1166,6 @@ h2 em {
 .site-header nav {
   font-size: 12px;
 }
-@view-transition {
-  navigation: auto;
-}
 @media (min-width: 1600px) {
   .hero-content {
     margin-left: calc((100% - 1280px) / 2);
@@ -1733,6 +1730,178 @@ h2 em {
   .reveal-pending {
     opacity: 1;
     transform: none;
+  }
+}
+.document-content h2,
+.document-content h3 {
+  overflow-wrap: anywhere;
+}
+.site-header nav {
+  margin-left: auto;
+}
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.language-switch {
+  display: grid;
+  place-items: center;
+  min-width: 42px;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  font-size: 11px;
+  color: var(--gold);
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.language-switch:hover {
+  background: rgba(199, 179, 136, 0.08);
+  border-color: var(--gold);
+}
+html[lang='zh-CN'] {
+  --zh-serif: 'Noto Serif CJK SC', 'Source Han Serif SC', 'Songti SC', SimSun, serif;
+}
+html[lang='zh-CN'] h1,
+html[lang='zh-CN'] h2,
+html[lang='zh-CN'] h3,
+html[lang='zh-CN'] .research-topics summary,
+html[lang='zh-CN'] .research-atlas figcaption,
+html[lang='zh-CN'] .wordmark,
+html[lang='zh-CN'] .about-name {
+  font-family: var(--zh-serif);
+}
+html[lang='zh-CN'] .hero h1 {
+  font-size: clamp(56px, 5.5vw, 83px);
+  line-height: 1.2;
+  letter-spacing: 0.035em;
+}
+html[lang='zh-CN'] em,
+html[lang='zh-CN'] .beyond {
+  font-style: normal;
+}
+html[lang='zh-CN'] h2 {
+  font-size: clamp(36px, 3.5vw, 54px);
+  line-height: 1.45;
+  letter-spacing: 0.035em;
+}
+html[lang='zh-CN'] .hero-description {
+  line-height: 2.1;
+}
+html[lang='zh-CN'] .hero-chinese {
+  font-size: 14px;
+  letter-spacing: 0.15em;
+}
+html[lang='zh-CN'] .wordmark {
+  font-size: 24px;
+  letter-spacing: 0.08em;
+}
+html[lang='zh-CN'] .wordmark small {
+  letter-spacing: 0.12em;
+}
+html[lang='zh-CN'] .research-topics summary {
+  font-size: 25px;
+}
+html[lang='zh-CN'] .research-atlas figcaption {
+  font-size: 18px;
+  font-style: normal;
+}
+html[lang='zh-CN'] .project h3 {
+  font-size: 33px;
+  line-height: 1.5;
+}
+html[lang='zh-CN'] .project-small h3 {
+  font-size: 27px;
+}
+html[lang='zh-CN'] .milestones article h3 {
+  font-size: 21px;
+  line-height: 1.5;
+}
+html[lang='zh-CN'] .contact h2 {
+  font-size: clamp(40px, 4.7vw, 68px);
+}
+html[lang='zh-CN'] .document-heading h1 {
+  font-size: 56px;
+  line-height: 1.4;
+}
+html[lang='zh-CN'] .document-content h2 {
+  font-size: 30px;
+}
+html[lang='zh-CN'] .document-content {
+  line-height: 2;
+}
+@media (min-width: 801px) and (max-width: 1100px) {
+  .site-header {
+    gap: 16px;
+    padding-inline: 3%;
+  }
+  .site-header nav {
+    gap: 16px;
+    font-size: 11px;
+  }
+  .nav-contact span {
+    margin-left: 8px;
+  }
+}
+@media (max-width: 800px) {
+  .header-controls {
+    margin-left: auto;
+  }
+  .site-header nav {
+    margin-left: 0;
+  }
+}
+@media (max-width: 560px) {
+  .site-header {
+    gap: 8px;
+  }
+  .wordmark {
+    font-size: 19px;
+    gap: 9px;
+  }
+  .wordmark small {
+    font-size: 6px;
+    letter-spacing: 0.1em;
+  }
+  .brand-star {
+    font-size: 23px;
+  }
+  .header-controls {
+    gap: 7px;
+  }
+  .menu-toggle {
+    gap: 8px;
+    padding-inline: 9px;
+  }
+  .language-switch {
+    min-width: 36px;
+  }
+  html[lang='zh-CN'] .hero h1 {
+    font-size: clamp(47px, 12.5vw, 62px);
+  }
+  html[lang='zh-CN'] h2 {
+    font-size: 34px;
+  }
+  html[lang='zh-CN'] .hero-chinese {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+  html[lang='zh-CN'] .project h3 {
+    font-size: 29px;
+  }
+  html[lang='zh-CN'] .project-small h3 {
+    font-size: 24px;
+  }
+  html[lang='zh-CN'] .contact h2 {
+    font-size: 33px;
+  }
+  html[lang='zh-CN'] .document-heading h1 {
+    font-size: 42px;
+  }
+  html[lang='zh-CN'] .document-content h2 {
+    font-size: 25px;
   }
 }
 @media print {
