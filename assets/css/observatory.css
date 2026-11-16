@@ -1698,9 +1698,12 @@ h2 em {
     min-height: 0;
     height: auto;
     padding-bottom: 85px;
+    display: flex;
+    flex-direction: column;
   }
   .hero-content {
     padding-bottom: 30px;
+    order: 1;
   }
   .hero-art {
     position: relative;
@@ -1710,6 +1713,8 @@ h2 em {
     width: min(90%, 440px);
     margin: 0 auto;
     opacity: 0.95;
+    order: 2;
+    flex-shrink: 0;
   }
 }
 @media (prefers-reduced-motion: reduce) {
