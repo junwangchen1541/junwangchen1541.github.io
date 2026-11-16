@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.home %}Junwang Chen · 君往臣{% else %}{{ page.title }} · Junwang Chen{% endif %}</title>
+  <meta name="description" content="Junwang Chen · 君往臣. Software engineering at Ocean University of China. Exploring remote sensing, deep learning, and the changing ocean.">
+  <meta name="theme-color" content="#080f1c">
+  <meta property="og:title" content="Junwang Chen · A personal observatory">
+  <meta property="og:description" content="Learning from the Earth. Looking toward the unknown. Research, code, and field notes by Junwang Chen.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="icon" href="{{ '/images/observatory-mark.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preload" href="{{ '/assets/fonts/cormorant-regular.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/assets/css/observatory.css' | relative_url }}">
+  <script src="{{ '/assets/js/observatory.js' | relative_url }}" defer></script>
+  <noscript><style>.menu-toggle,#motion-toggle{display:none}@media(max-width:800px){.site-header{height:auto;min-height:85px;flex-wrap:wrap;padding-block:20px;gap:20px}.site-header nav{display:flex;position:static;flex-direction:row;flex-wrap:wrap;padding:0;border:0;gap:16px;font-size:11px;background:transparent}.hero-content{padding-top:210px}.document-main{padding-top:210px}}</style></noscript>
+</head>
+<body{% unless page.home %} class="interior-page"{% endunless %}>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Junwang Chen, home"><span class="brand-star" aria-hidden="true">✳</span><span>Junwang Chen<small>君往臣 · A PERSONAL OBSERVATORY</small></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" type="button">Menu <span aria-hidden="true">+</span></button>
+    <nav id="site-nav" aria-label="Main navigation">
+      <a href="{{ '/#research' | relative_url }}">Research</a>
+      <a href="{{ '/#work' | relative_url }}">Selected work</a>
+      <a href="{{ '/#about' | relative_url }}">About</a>
+      <a href="{{ '/cv/' | relative_url }}">CV <span aria-hidden="true">↗</span></a>
+      <a class="nav-contact" href="{{ '/#contact' | relative_url }}">Let’s connect <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  {% if page.home %}{{ content }}{% else %}
+  <main id="main" class="document-main">
+    <a class="eyebrow back-link" href="{{ '/' | relative_url }}">← BACK TO THE OBSERVATORY</a>
+    <div class="document-heading"><p class="eyebrow">FIELD NOTES / JUNWANG CHEN</p><h1>{{ page.title }}</h1></div>
+    <article class="document-content">{{ content }}</article>
+  </main>
+  {% endif %}
+  <footer class="site-footer"><a href="{{ '/' | relative_url }}">Junwang Chen <span lang="zh-CN">君往臣</span></a><p>Qingdao, Earth <span class="footer-star" aria-hidden="true">✦</span> Looking a little further.</p><a href="#main">Back to top ↑</a></footer>
+</body>
+</html>

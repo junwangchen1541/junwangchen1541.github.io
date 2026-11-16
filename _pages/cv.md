@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: observatory
 title: "CV"
 permalink: /cv/
 author_profile: true

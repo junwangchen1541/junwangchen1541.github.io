@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: observatory
 title: "Research"
 permalink: /research/
 author_profile: true
